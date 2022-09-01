@@ -21,6 +21,14 @@ app.use(morgan("dev"));
 // routes
 app.use(indexRoutes);
 
+//my
+app.use(express.urlencoded({extended: true}));
+app.use(express.json({type:"*/*"}));
+app.use(express.json());
+const cors = require("cors");
+app.use(cors());
+
+
 // static files
 app.use(express.static(join(__dirname, "public")));
 
